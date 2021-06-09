@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    font-family: 'Roboto';
+}
+
+main #app {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 100vw!important;
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    padding: 1rem 5rem;
+    min-height: 100vh;
+    height: 100%;
+    background: linear-gradient(#c26565, #9198e5); 
+    background-repeat: no-repeat;
+}
+
+article{
+    float: left;
+    padding-top: 3rem;
+}
+
+header > * {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+header button{
+    padding: 0.5rem;
+    color: black;
+    font-size: 1.3rem;
+    background: transparent;
+    border: none !important;
+}
+
+.courses{
+    display: inline-block;
+    position: relative;
+    width: 18rem; 
+    height: 25rem;
+    margin-right: 2rem;
+    padding: 2rem;
+    margin: 2rem;
+    color: black;
+    background-color: lavender;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+}
+
+.courses h2 {
+    margin-top: 0;
+}
+
+.category{
+    font-weight: 900;
+}
+
+.prix{
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    width: 100px;
+    font-size: 2rem;
+    margin-right: 1.5rem;
+}
+
+.prix span{
+    color: black;
+    display: inline-block;
+    background-color: white;
+    text-align: center;
+    border-radius: 9px;
+}
+
+.prixKilo {
+    display: inline-block;
+    font-size: 1.5rem;
+}
+
+.numbers {
+    position: absolute;
+    bottom: 0;
+}
+
+#formNew{
+    position: relative;
+    width: 18rem; 
+    height: 25rem;
+    margin-right: 2rem;
+    padding: 2rem;
+    margin: 2rem;
+    color: black;
+    border-radius: 10px;
+    background-color: aliceblue;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+}
+
+#formNew h2{
+    margin-top: 0;
+}
+
+#formNew input{
+    padding: 3px; 
+    border: none;
+    border-radius: 3px;
+}
+
+#formNew button{
+    float: right;
+    margin-right: 0.5rem;
+    color: black;
+    background-color: aliceblue;
+    border: 1px solid black; 
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+.courses input{
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 900;
+    width: 100%;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.disabled {
+    border : none;
+    pointer-events: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 900;
+    width: 100%;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Léa PORTIER</title>
+</head>
+<body>
+    <main id="app">
+        <header>
+            <h1>Courses Memory</h1>
+            <button @click="displayForm = !displayForm">{{ displayForm ? "Hide Produits" : "Add Produits" }}</button>
+            <button @click="displayProducts = !displayProducts">{{ displayProducts ? "Hide List Produits" : "View List Produits" }}</button>
+            <div id="loading" v-if="loading">
+                Loading...
+            </div>
+        </header>
+        
+        <section>
+            <article v-if="displayProducts">
+                 <!-- {{ courses }}  -->
+
+                <div 
+                    class="courses"
+                    v-for="course of selectedCourses" 
+                >
+                    <h2 @click="edit">
+                        <input 
+                            v-model="course.name"
+                            class="disabled"
+                            v-on:keyup.enter="validate($event, course, 'name', course.name)"
+                        >
+                    </h2>
+                    <p class="category">{{ course.category }}</p>
+                    <p class="quantity">{{ course.quantity }}</p>
+                    <div class="numbers">
+                        <p class="prix"><span>{{ course.prix }}</span></p>
+                        <p class="prixKilo">PrixK/L : {{ course.prixKilo }}</p>
+                    </div>
+                    <p class="marque">{{ course.marque }}</p>
+                    <p class="grocery">{{ course.grocery }}</p>
+                    <p class="desc">{{ course.desc }}</p>
+                </div>
+            </article>
+            <article id="formNew" v-if="displayForm">
+                <h2>New Product</h2>
+                <p>
+                    <label for="name">Name :</label>
+                    <input type="text" id="name" v-model="newCourse.name">
+                </p>
+                <p>
+                    <label for="category">Category :</label>
+                    <input type="text" id="category" v-model="newCourse.category">
+                </p>
+                <p>
+                    <label for="quantity">Quantity :</label>
+                    <input type="number" id="quantity" v-model="newCourse.quantity">
+                </p>
+                <p>
+                    <label for="prix">Prix :</label>
+                    <input type="number" step="0.01" id="prix" v-model="newCourse.prix">
+                </p>
+                <p>
+                    <label for="prixKilo">PrixKilo :</label>
+                    <input type="number" step="0.01" id="prixKilo" v-model="newCourse.prixKilo">
+                </p>
+                <p>
+                    <label for="marque">Marque :</label>
+                    <input type="text" id="marque" v-model="newCourse.marque">
+                </p>
+                <p>
+                    <label for="grocery">Grocery :</label>
+                    <select name="grocery" id="grocery" v-model="newCourse.grocery">
+                        <option value="">--Please choose a grocery--</option>
+                        <option valeur="lc">Leclerc</option>
+                        <option valeur="lp">LeaderPrice</option>
+                        <option valeur="cf">Carrefour</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="desc">Description :</label>
+                    <input type="text" id="desc" v-model="newCourse.desc">
+                </p>
+                <p>
+                    <button @click="add">Add</button>
+                </p>
+            </article>
+        </section>
+        
+    </main>
+
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue-resource.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
